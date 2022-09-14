@@ -1,3 +1,3 @@
 # PassaroUrbano
 
-Projeto para estudos, realizado durante o curso de desenvolvimento web com Angular e Typescript, ministrado por Jorge Sant'ana
+Project for studies, developed during the web development course with Angular and Typescript, taught by instructor Jorge Sant'ana
