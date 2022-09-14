@@ -1,5 +1,6 @@
-import { OfertasService } from './../ofertas.service';
+import { OfertasService } from '../services/ofertas.service';
 import { Component, OnInit } from '@angular/core';
+import { IOfertas } from '../services/Ofertas';
 
 @Component({
   selector: 'app-home',
@@ -8,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
   providers: [OfertasService],
 })
 export class HomeComponent implements OnInit {
+  public ofertas?: IOfertas[];
+
   constructor(private OfertasService: OfertasService) {}
 
   ngOnInit(): void {
-    console.log(this.OfertasService.getOfertas());
+    this.OfertasService.getOfertas().subscribe(
+      (ofertas) => (this.ofertas = ofertas)
+    );
   }
 }
