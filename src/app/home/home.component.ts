@@ -14,8 +14,9 @@ export class HomeComponent implements OnInit {
   constructor(private OfertasService: OfertasService) {}
 
   ngOnInit(): void {
-    this.OfertasService.getOfertas().subscribe(
-      (ofertas) => (this.ofertas = ofertas)
-    );
+    this.OfertasService.getOfertas().subscribe((ofertas) => {
+      this.ofertas = ofertas;
+      console.log(ofertas);
+    });
   }
 }

@@ -6,5 +6,5 @@ export interface IOfertas {
   anunciante: string;
   valor: number;
   destaque: boolean;
-  imagens: Array<object>;
+  imagens: Array<{ url: string }>;
 }
