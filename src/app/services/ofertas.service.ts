@@ -5,15 +5,19 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class OfertasService {
+  private baseUrl = '${this.baseUrl}';
+
   constructor(private http: HttpClient) {}
 
   public getOfertas(): Observable<IOfertas[]> {
-    return this.http.get<IOfertas[]>('http://localhost:3000/ofertas');
+    return this.http.get<IOfertas[]>('${this.baseUrl}');
   }
 
   public getOfertasByCategory(category: string): Observable<IOfertas[]> {
-    return this.http.get<IOfertas[]>(
-      `http://localhost:3000/ofertas?categoria=${category}`
-    );
+    return this.http.get<IOfertas[]>(`${this.baseUrl}?categoria=${category}`);
+  }
+
+  public getOfertasById(id: number): Observable<IOfertas> {
+    return this.http.get<IOfertas>(`${this.baseUrl}?id=${id}`);
   }
 }
