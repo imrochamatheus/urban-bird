@@ -1,10 +1,26 @@
 <div class="fixed-top bg-light">
   <nav class="navbar navbar-light bg-faded">
-    <div class="container">
-      <a routerLink="" class="navbar-brand">
-        <img src="/assets/logo.png" />
-      </a>
-      <a a href="#"><img src="/assets/carrinho.png" /></a>
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-6">
+          <a routerLink="" class="navbar-brand">
+            <img src="/assets/logo.png" />
+          </a>
+        </div>
+        <div class="col-5">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+            (keyup)="pesquisar(inputPesquisa.value)"
+            #inputPesquisa
+          />
+        </div>
+        <div class="col-1">
+          <a a href="#"><img src="/assets/carrinho.png" /></a>
+        </div>
+      </div>
     </div>
   </nav>
 

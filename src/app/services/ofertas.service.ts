@@ -2,6 +2,7 @@ import { IOfertas } from './Ofertas';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { retry } from 'rxjs';
 
 @Injectable()
 export class OfertasService {
@@ -29,5 +30,11 @@ export class OfertasService {
 
   public getOndeFicaById(id: number): Observable<any> {
     return this.http.get<any>(`${this.baseUrl}/onde-fica?id=${id}`);
+  }
+
+  public getOfertasByText(text: string): Observable<IOfertas[]> {
+    return this.http.get<IOfertas[]>(
+      `${this.baseUrl}/ofertas?titulo_like=${text}`
+    );
   }
 }
