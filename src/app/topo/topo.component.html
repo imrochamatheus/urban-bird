@@ -18,7 +18,9 @@
           />
           <ul class="list-group" style="position: absolute">
             <li class="list-group-item" *ngFor="let oferta of ofertas | async">
-              {{ oferta.titulo | lowercase | truncar: 10 }}
+              <a [routerLink]="['oferta', oferta.id]">
+                {{ oferta.titulo | lowercase | truncar: 10 }}
+              </a>
             </li>
           </ul>
         </div>
