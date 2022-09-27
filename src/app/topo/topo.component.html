@@ -16,6 +16,11 @@
             (keyup)="pesquisar(inputPesquisa.value)"
             #inputPesquisa
           />
+          <ul class="list-group" style="position: absolute">
+            <li class="list-group-item" *ngFor="let oferta of ofertas | async">
+              {{ oferta.titulo | lowercase | truncar: 10 }}
+            </li>
+          </ul>
         </div>
         <div class="col-1">
           <a a href="#"><img src="/assets/carrinho.png" /></a>

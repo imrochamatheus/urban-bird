@@ -1,16 +1,7 @@
 import { IOfertas } from './../services/Ofertas';
 import { Component, OnInit } from '@angular/core';
-// import {
-//   catchError,
-//   debounceTime,
-//   distinctUntilChanged,
-//   Observable,
-//   Subject,
-// } from 'rxjs';
 import * as rxjs from 'rxjs';
-// import { switchMap } from 'rxjs';
 import { OfertasService } from '../services/ofertas.service';
-// import { of } from 'rxjs';
 
 @Component({
   selector: 'app-topo',
@@ -21,6 +12,7 @@ import { OfertasService } from '../services/ofertas.service';
 export class TopoComponent implements OnInit {
   public subjectPesquisa = new rxjs.Subject<string>();
   public ofertas?: rxjs.Observable<IOfertas[]>;
+  public ofertas2: IOfertas[] = [];
 
   constructor(private ofertasService: OfertasService) {}
 
@@ -37,7 +29,7 @@ export class TopoComponent implements OnInit {
       }),
       rxjs.catchError((err) => rxjs.of<IOfertas[]>([]))
     );
-    this.ofertas.subscribe((ofertas) => console.log(ofertas));
+    this.ofertas.subscribe((ofertas) => (this.ofertas2 = ofertas));
   }
 
   public pesquisar(termoPesquisa: string): void {
