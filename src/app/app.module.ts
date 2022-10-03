@@ -15,6 +15,7 @@ import { DiversaoComponent } from './diversao/diversao.component';
 import { OfertaComponent } from './oferta/oferta.component';
 import { ComoUsarComponent } from './oferta/como-usar/como-usar.component';
 import { OndeFicaComponent } from './oferta/onde-fica/onde-fica.component';
+import { OrdemCompraComponent } from './ordem-compra/ordem-compra.component';
 registerLocaleData(ptBR);
 
 @NgModule({
@@ -29,6 +30,7 @@ registerLocaleData(ptBR);
     ComoUsarComponent,
     OndeFicaComponent,
     DescricaoReduzida,
+    OrdemCompraComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, NgbModule, HttpClientModule],
   providers: [{ provide: LOCALE_ID, useValue: 'pt-BR' }],

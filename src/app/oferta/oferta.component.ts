@@ -1,5 +1,5 @@
 import { IOfertas } from '../services/Ofertas';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { OfertasService } from './../services/ofertas.service';
 
@@ -18,10 +18,10 @@ export class OfertaComponent implements OnInit {
   public oferta?: IOfertas;
 
   ngOnInit(): void {
-    const offerId = this.route.snapshot.params['id'];
-
-    this.ofertasService
-      .getOfertasById(offerId)
-      .subscribe((oferta) => (this.oferta = oferta.shift()));
+    const offerId = this.route.params.subscribe((params: Params) => {
+      this.ofertasService
+        .getOfertasById(params['id'])
+        .subscribe((oferta) => (this.oferta = oferta.shift()));
+    });
   }
 }

@@ -6,6 +6,7 @@ import { OfertaComponent } from './oferta/oferta.component';
 import { DiversaoComponent } from './diversao/diversao.component';
 import { RestaurantesComponent } from './restaurantes/restaurantes.component';
 import { OndeFicaComponent } from './oferta/onde-fica/onde-fica.component';
+import { OrdemCompraComponent } from './ordem-compra/ordem-compra.component';
 
 const routes: Routes = [
   {
@@ -41,6 +42,10 @@ const routes: Routes = [
         component: OndeFicaComponent,
       },
     ],
+  },
+  {
+    path: 'ordem-compra',
+    component: OrdemCompraComponent,
   },
 ];
 
