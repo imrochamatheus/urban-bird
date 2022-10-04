@@ -1,4 +1,5 @@
 import { NgModule, LOCALE_ID } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { registerLocaleData } from '@angular/common';
@@ -16,6 +17,7 @@ import { OfertaComponent } from './oferta/oferta.component';
 import { ComoUsarComponent } from './oferta/como-usar/como-usar.component';
 import { OndeFicaComponent } from './oferta/onde-fica/onde-fica.component';
 import { OrdemCompraComponent } from './ordem-compra/ordem-compra.component';
+
 registerLocaleData(ptBR);
 
 @NgModule({
@@ -32,7 +34,13 @@ registerLocaleData(ptBR);
     DescricaoReduzida,
     OrdemCompraComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, NgbModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    NgbModule,
+    HttpClientModule,
+    FormsModule,
+  ],
   providers: [{ provide: LOCALE_ID, useValue: 'pt-BR' }],
   bootstrap: [AppComponent],
 })
